@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
     <nav className="navbar navbar-expand fixed-top navbar-light bg-light">
       <ul className="navbar-nav ms-auto me-3">
         <li className="nav-item">
-          <Link className="nav-link" to="/">
+          <NavLink className="nav-link" to="/">
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/GroupTeamMembers">
+          <NavLink className="nav-link" to="/GroupTeamMembers">
             Teams
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

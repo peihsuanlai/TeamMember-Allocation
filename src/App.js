@@ -7,7 +7,7 @@ import Employees from "./pages/Employees";
 import NotFound from "./pages/NotFound";
 import GroupTeamMembers from "./pages/GroupTeamMembers";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [selectedTeam, setTeam] = useState(
@@ -85,7 +85,7 @@ function App() {
         gender: "female",
         teamName: "TeamD",
       },
-     
+
       {
         id: 11,
         fullName: "Adrian Jacobs",
@@ -122,11 +122,11 @@ function App() {
   function cardClick(e) {
     //用一變數接收點擊後的結果
     const newEmployees = employees.map((employee) =>
-    //針對點選到的成員做比對，其餘維持不變
+      //針對點選到的成員做比對，其餘維持不變
       employee.id === parseInt(e.currentTarget.id)
         ? employee.teamName === selectedTeam
-        //展開employee物件，設定teamName屬性
-          ? { ...employee, teamName: "" }
+          ? //展開employee物件，設定teamName屬性
+            { ...employee, teamName: "" }
           : { ...employee, teamName: selectedTeam }
         : employee
     );
