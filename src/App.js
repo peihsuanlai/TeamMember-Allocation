@@ -145,8 +145,8 @@ function App() {
         }
       />
       <Routes>
-        <Route
-          path="/"
+        <Route exact
+          path="/#"
           element={
             <Employees
               employees={employees}
@@ -158,7 +158,7 @@ function App() {
         ></Route>
 
         <Route
-          path="/GroupTeamMembers"
+          path="/#/GroupTeamMembers"
           element={
             <GroupTeamMembers
               employees={employees}
@@ -168,7 +168,7 @@ function App() {
           }
         ></Route>
 
-        <Route path="*" element={<NotFound />}></Route>
+        <Route path="/#/*" element={<NotFound />}></Route>
       </Routes>
 
       <Footer />
