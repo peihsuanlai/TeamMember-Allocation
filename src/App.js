@@ -7,7 +7,7 @@ import Employees from "./pages/Employees";
 import NotFound from "./pages/NotFound";
 import GroupTeamMembers from "./pages/GroupTeamMembers";
 import { useState, useEffect } from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter , Route, Routes } from "react-router-dom";
 
 function App() {
   const [selectedTeam, setTeam] = useState(
@@ -134,7 +134,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <HashRouter>
       <Nav />
 
       <Header
@@ -146,7 +146,7 @@ function App() {
       />
       <Routes>
         <Route exact
-          path="/#"
+          path="/"
           element={
             <Employees
               employees={employees}
@@ -158,7 +158,7 @@ function App() {
         ></Route>
 
         <Route
-          path="/#/GroupTeamMembers"
+          path="/GroupTeamMembers"
           element={
             <GroupTeamMembers
               employees={employees}
@@ -168,11 +168,11 @@ function App() {
           }
         ></Route>
 
-        <Route path="/#/*" element={<NotFound />}></Route>
+        <Route path="/*" element={<NotFound />}></Route>
       </Routes>
 
       <Footer />
-    </Router>
+    </HashRouter>
   );
 }
 
